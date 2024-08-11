@@ -5,17 +5,17 @@ import Image from 'next/image'
 // import auth from '@/assets/auth.png'
 // import logo from '@/assets/logo.png'
 // import {defaultSettings} from "@/app/themeConfig";
-// import session from "@/lib/session";
+import session from "@/lib/session";
 import {useRouter} from "next/navigation";
 
 const Layout = ({children}) => {
     let router = useRouter()
-    // useEffect(()=>{
-    //     if (session.getToken()){
-    //         router.push('/dashboard')
-    //     }
-    //
-    // },[])
+    useEffect(()=>{
+        if (session.getToken()){
+            router.push('/dashboard')
+        }
+
+    },[])
     return (
         // <ConfigProvider theme={defaultSettings}>
             <div className="auth-screen">
